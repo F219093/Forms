@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Transit Contract Form</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <!-- <h1 class="form-title">Car Transit Contract Form</h1> -->
+        <div class="logo">
+          <img id="myImage" src="pic.jpg" alt="Logo">
+        </div>
+      </header>
+      
+	
+	<form >
+		<label for="contract-number"> رقم التعاقد/ Contract Number:</label>
+		<input type="text" id="contract-number" required><br><br>
+
+		<label for="origin">أصل / Origin:</label>
+		<input type="text" id="origin" required><br><br>
+
+		<label for="consignee">المرسل إليه في الوجهة / Consignee at Destination:</label>
+		<input type="text" id="consignee" required><br><br>
+
+		<label for="car-owner">مالك السيارة / Car Owner:</label>
+		<input type="text" id="car-owner" required><br><br>
+
+		<label for="destination">وجهة / Destination:</label>
+		<input type="text" id="destination" required><br><br>
+
+		<label for="freight-charges">رسوم الشحن / Freight Charges:</label>
+		<input type="number" id="freight-charges" required><br><br>
+
+		<label for="jordan-insurance">الأردن للتأمين / Jordan Insurance:</label>
+		<input type="number" id="jordan-insurance" required><br><br>
+
+		<label for="colour">لون / Colour:</label>
+		<input type="text" id="colour" required><br><br>
+
+		<label for="model">نموذج / Model:</label>
+		<input type="text" id="model" required><br><br>
+
+		<label for="car-number">رقم السياره / Car Number:</label>
+		<input type="text" id="car-number" required><br><br>
+
+		<label for="car-type">نوع السيارة / Car Type:</label>
+		<input type="text" id="car-type" required><br><br>
+
+		<label for="booking-date">تاريخ الحجز / Booking Date:</label>
+		<input type="date" id="booking-date" required><br><br>
+
+		<label for="receiving-date">تاريخ الاستلام / Receiving Date:</label>
+		<input type="date" id="receiving-date" required><br><br>
+
+		<label for="car-value-declaration">بيان قيمة السيارة / Car Value Declaration:</label>
+		<input type="number" id="car-value-declaration" required><br><br>
+
+		<label for="description">وصف / Description:</label><br>
+		<div style="float:left; width:50%; font-weight:100;" >
+		
+			<input type="checkbox" id="Petroleum" name="Petroleum" value="Petroleum">
+			<label style="font-weight: 70;" for="Petroleum">Petroleum / البترول
+			</label><br>
+			<input type="checkbox" id="Spaces" name="Spaces" value="Spaces">
+			<label style="font-weight: 70;" for="Spaces">Spaces / المساحات
+
+			</label><br>
+			<input type="checkbox" id="Right and left mirrors" name="Right and left mirrors" value="Right and left mirrors">
+			<label style="font-weight: 70;" for="Right and left mirrors">Right and left mirrors / مرايا يمين ويسار
+
+			</label><br>
+			<input type="checkbox" id="Lights behind and in front" name="Lights behind and in front" value="Lights behind and in front">
+			<label style="font-weight: 70;" for="Lights behind and in front">Lights behind and in front / الأنوار خلفي و أمامي
+
+			</label><br>
+			<input type="checkbox" id="keys" name="keys" value="keys">
+			<label style="font-weight: 70;" for="keys">keys / المفاتيح
+			</label><br>
+			<input type="checkbox" id="Cigarette lighter" name="Cigarette lighter" value="Cigarette lighter">
+			<label style="font-weight: 70;" for="Cigarette lighter">Cigarette lighter / ولاعة السجائر
+
+ 
+			</label><br>
+			<input type="checkbox" id="Car glass" name="Car glass" value="Car glass">
+			<label style="font-weight: 70;" for="Car glass"> Car glass / زجاج السيارة
+
+			</label><br>
+			<input type="checkbox" id="Spare tire" name="Spare tire" value="Spare tire">
+			<label style="font-weight: 70;" for="Spare tire">Spare tire / 
+				الإطار الاحتياطي 
+			</label><br>
+		</div>
+		<div style="float:right; width:50%">
+			
+			<input type="checkbox" id="Tire Covers" name="Tire Covers" value="Tire Covers">
+			<label style="font-weight: 70;" for="Tire Covers">Tire Covers (Rinfat) / أغطية الإطارات (رينفات)
+
+			</label><br>
+			<input type="checkbox" id="Exterior bodywork" name="Exterior bodywork" value="Exterior bodywork">
+			<label style="font-weight: 70;" for="Exterior bodywork">Exterior bodywork / هيكل السيارة الخارجي
+			</label><br>
+			<input type="checkbox" id="Aryl seats" name="Aryl seats" value="Aryl seats">
+			<label style="font-weight: 70;" for="Aryl seats">Aryl seats / المقاعد الأريل
+
+			</label><br>
+			<input type="checkbox" id="key set" name="key set" value="key set">
+			<label style="font-weight: 70;" for="key set">key set / طقم المفاتيح
+ 
+			</label><br>
+			<input type="checkbox" id="General scratches" name="General scratches" value="General scratches">
+			<label style="font-weight: 70;" for="General scratches">General scratches / خدوش عامة
+
+			</label><br>
+			<input type="checkbox" id="General strikes" name="General strikes" value="General strikes">
+			<label style="font-weight: 70;" for="General strikes"> General strikes / ضربات عامة
+
+			</label><br>
+			<input type="checkbox" id="vehicle tyres" name="vehicle tyres" value="vehicle tyres">
+			<label style="font-weight: 70;" for="vehicle tyres"> vehicle tyres / إطارات المركبة
+
+			</label><br>
+			<input type="checkbox" id="checkbox16" name="checkbox16" value="checkbox16">
+			<label style="font-weight: 70;" for="checkbox16"> Aryl seats / المقاعد الأريل
+
+			</label><br>
+		</div><br>
+
+
+		<label for="car-value-declaration">القواعد و القوانين التنظيمية / Rules and Regulations</label>
+		<p style="text-align: right; font-size: 15px;">
+			لا يعتبر هذا الرسم تقرير فني لحاله السيارة 
+الشركة غير مسؤوله عن الأغراض الشخصية داخل السيارة 
+
+ــــــــــــــــــــــــــ
+<br>
+
+يتوجب علي مالك السياره مراجعه الجمارك الاردنيه قسم السيارات الاجنبيه لتجديد الاقامه للسياره حسب القوانين خلال 7 أيام من دخول أراضي المملكه <br>.
+عند توقيع هذا العقد او دفع الفاتوره الخاصه بهذا العقد يكون صاحب السياره قد فوض كونكورد اللوجستيه و موظفيها بقياده السياره المذكوره من دبي الي ابوظبي او العكس و تكون الشركه مسؤله عن مخالفات السير اثناء القياده فقط 
+يجب علي صاحب المركبه ذكر التاريخ / الوقت عند تويقع العقد لتفادي مخالفات السير اثناء وجود المركبه بحوزه الشركه
+يدفع مبلغ 20 دينار عند استلام و تسليم السياره في الأردن كخدمه مكتب بالاضافه 20 دينار عند تسليم السياره للعوده و مبلغ 25 دينار الخروجيه للسياره حسب الحكومه الاردنيه <br>.
+يجب علي صاحب السياره احضار ختم براءه ذمه من قسم السيارات الاجنبيه قبل تسليم السياره الي مكاتب الشركه في رحله العوده و يتعهد مالك المركبة بدفع كافه الغرامات الجمركية و المخالفات و التامين و رسوم السير للمركبه قبل تسليمها للشركه الناقله <br>.
+سعر الشحن المتفق عليه بين الطرفين علي ناقلات الشركه فقط و أي قوانين تصدر في شحن المركبات علي الناقلات غير الاماراتيه يتعهد مالك المركبه بدفع فرق سعر الشحن لصالح الشركه الناقله و لا يحق لمالك المركبه الاعتراض علي طريقه الشحن المذكوره
+يتوجب علي صاحب المركبه تسليم المركبه في رحله العوده علي ان تكون الاقامه للمركبه صالحه حسب القانون بمده لا تقل عن 60 يوما من تاريخ التسليم و لا تتحمل الشركه أي غرامات او مخالفات او تأمينات جراء عدم الالتزام بهذا الشرط.
+<br>في حاله فسخ العقد من احد الطرفين تتعهد الشركه الناقله بارجاع مبلغ 500 درهم اماراتي ( خمس مايه درهم اماراتي ) فقط لا غير و لا يحق لمالك المركبه المطالبه بكثر من هذا المبلغ تحت أي ظرف كان.  
+أي قوانين تصدر عن الحكومات او نقابه شركات النقل الأردنية تمنع الناقلات الإماراتية من التحميل في رحله العودة يتم شحن المركبة مع أي ناقل اخر اردني و يتحمل صاحب المركبة مبلغ 300 دينار اردني اضافيه الارجاع المركبة الي الدولة كفرق سعر علي الناقلات الأردنية .
+الشركه الناقله غير مسؤله عن الامتعه الشخصيه داخل السياره و يمنع نهائيا وضع أي الكترونيات او مهربائيات و ادويه او مجلات او جرائد او نظارات او عطور او سجاير حيث انها ممنوعه نهائيا و يتحمل صاحب المركبه الغرامات المقرره من الجمارك بالاضافه الي عطل السياره و الضرر الناتج عن عدم اتباع القوانين و احكام العقد .
+يمنع وضع أي أغراض شخصيه داخل السياره 
+الشركه غير مسؤله عن حاله السياره الفنيه او الميكانيكيه و لا تتحمل الشركه أي مسؤليه اتجاه صاحب السياره حيث تم استلام السياره وفق المنظر الخارجي فقط دون الدخول في تفاصيل ميكانيكيه او فنيه عن حاله المركبه <br>. 
+لا يجوز رفع دعوه قضائيه بحق السائق او الموظفين او الشركه قبل تعين محكم قضائي مدفوع الرسوم من قبل صاحب السياره 
+
+		</p>
+
+		<label>Documents/ المستندات
+		</label>
+			<input  type="checkbox" id="Vehicle ownership" name="Vehicle ownership" value="Vehicleownership">
+			<label style="display:inline-block; margin-right: 20px;font-weight: 70;" for="checkbox1">Vehicle ownership / ملكية المركبة
+			</label>
+		
+		
+			<input  type="checkbox" id="Your Tripbook" name="Your Tripbook" value="Tripbook">
+			<label style="display:inline-block; margin-right: 20px;font-weight: 70;" for="Your Tripbook">Your Tripbook / دفتر تريبتك
+			</label>
+	
+	
+			<input type="checkbox" id="Expatriation certificate" name="Expatriation certificate" value="Expatriation certificate">
+			<label style="display:inline-block;margin-right: 20px;font-weight: 70;"  for="Expatriation certificate">Expatriation certificate / 
+				شهادة تسفير
+				</label>
+	
+		<br>
+			<input type="checkbox" id="Driving license" name="Driving license" value="Driving license" >
+			<label style="display:inline-block;margin-right: 20px;font-weight: 70;"  for="Driving license">Driving license / رخصة القيادة
+
+			</label>
+		
+	
+			<input type="checkbox" id="Residence permit" name="Residence permit" value="Residence permit">
+			<label style="display:inline-block;margin-right: 20px;font-weight: 70;"  for="Residence permit">Residence permit / صورة جواز السفر والإقامة
+			</label><br>
+	
+
+			<label style="margin-top: 30px;" for="comments">Comments / ملاحظات</label>
+			<input type="text" id="comments"  required><br><br>
+
+
+			<p> 
+				<input type="checkbox" id="agreement" value="I, the owner of the car, acknowledge that I have read and agreed to ship the car according to the terms and conditions indicated behind this contract, and I must sign it." ><label > I, the owner of the car, acknowledge that I have read and agreed to ship the car according to the terms and conditions indicated behind this contract, and I must sign it. / <br>
+					قر أنا مالك السيارة أنني قرأت ووافقت على شحن السيارة حسب الشروط والأحكام الموضحه خلف في هذا العقد وعليه اوقع.
+				</label>
+
+			</p>
+		<div class="container">
+			<div class="box">
+				<div class="label">CONCORDE SERVICES / كونكورد للخدمات اللوجستية
+				</div>
+				<div class="input-group">
+					<label>Date / التاريخ
+					</label>
+					<input type="text" id="date1">
+				</div>
+				<div class="input-group">
+					<label>Signature / التوقيع
+					</label>
+					<input type="text" id="signature1" class="signature">
+				</div>
+			</div>
+			<div class="box">
+				<div class="label">
+					Customer Name / اسم العميل
+				</div>
+				<div class="input-group">
+					<label>Date / التاريخ</label>
+					<input type="text" id="date2">
+				</div>
+				<div class="input-group">
+					<label>Signature / التوقيع</label>
+					<input type="text" id="signature2" class="signature">
+				</div>
+			</div>
+		</div>
+		<button onclick="generatePDF()">Submit</button>
+	</form>
+
+	<script>
+		function generatePDF() {
+			// Get the form data
+        
+
+			var contractNumber = document.getElementById('contract-number').value;
+	var origin = document.getElementById('origin').value;
+	var consignee = document.getElementById('consignee').value;
+	var carOwner = document.getElementById('car-owner').value;
+	var destination = document.getElementById('destination').value;
+	var freightCharges = document.getElementById('freight-charges').value;
+	var jordanInsurance = document.getElementById('jordan-insurance').value;
+	var colour = document.getElementById('colour').value;
+	var model = document.getElementById('model').value;
+	var carNumber = document.getElementById('car-number').value;
+	var carType = document.getElementById('car-type').value;
+	var bookingDate = document.getElementById('booking-date').value;
+	var receivingDate = document.getElementById('receiving-date').value;
+	var carValueDeclaration = document.getElementById('car-value-declaration').value;
+	var description1 = document.getElementById('Petroleum').checked ? document.getElementById('Petroleum').value : '';
+	var description2 = document.getElementById('Spaces').checked ? document.getElementById('Spaces').value : '';
+	var description3 = document.getElementById('Right and left mirrors').checked ? document.getElementById('Right and left mirrors').value : '';
+	var description4 = document.getElementById('Lights behind and in front').checked ? document.getElementById('Lights behind and in front').value : '';
+	var description5 = document.getElementById('keys').checked ? document.getElementById('keys').value : '';
+	var description6 = document.getElementById('Cigarette lighter').checked ? document.getElementById('Cigarette lighter').value : '';
+	var description7 = document.getElementById('Car glass').checked ? document.getElementById('Car glass').value : '';
+	var description8 = document.getElementById('Spare tire').checked ? document.getElementById('Spare tire').value : '';
+	var description9 = document.getElementById('Tire Covers').checked ? document.getElementById('Tire Covers').value : '';
+	var description10 = document.getElementById('Exterior bodywork').checked ? document.getElementById('Exterior bodywork').value : '';
+	var description11 = document.getElementById('Aryl seats').checked ? document.getElementById('Aryl seats').value : '';
+	var description12 = document.getElementById('key set').checked ? document.getElementById('key set').value : '';
+	var description13 = document.getElementById('General scratches').checked ? document.getElementById('General scratches').value : '';
+	var description14 = document.getElementById('General strikes').checked ? document.getElementById('General strikes').value : '';
+	var description15 = document.getElementById('vehicle tyres').checked ? document.getElementById('vehicle tyres').value : '';
+	var Vehicleownership = document.getElementById('Vehicle ownership').checked ? document.getElementById('Vehicle ownership').value : '';
+	var agreement =  document.getElementById('agreement').checked ? document.getElementById('agreement').value : '';
+	var YourTripbook = document.getElementById('Your Tripbook').checked ? document.getElementById('Your Tripbook').value : '';
+	var Expatriationcertificate = document.getElementById('Expatriation certificate').checked ? document.getElementById('Expatriation certificate').value : '';
+	var Drivinglicense = document.getElementById('Driving license').checked ? document.getElementById('Driving license').value : '';
+	var Residencepermit = document.getElementById('Residence permit').checked ? document.getElementById('Residence permit').value : '';
+	var comments = document.getElementById('comments').value;
+	var date1 = document.getElementById('date1').value;
+	var signature1 = document.getElementById('signature1').value;
+	var date2 = document.getElementById('date2').value;
+	var signature2 = document.getElementById('signature2').value;
+			// Create a new jsPDF object
+			var doc = new jsPDF();
+
+	doc.setFontSize(15);
+    
+
+	doc.rect(5, 5, 190, 23); // Add a border around the entire content area
+	var imgData = document.getElementById('myImage');
+	// 145, 12,50, 20
+// Add the image to the PDF at position (x, y) with the specified width and height
+doc.addImage(imgData, 'JPG', 50, -2,110,30);
+// doc.text("Car Transit Contract Form", 15, 25);
+doc.setFontSize(12);
+doc.text("Contract Number: " + contractNumber+ "\t\t\t\t\t\t  Origin: " + origin ,15, 40);
+doc.rect(10, 33, 190, 10); // Add a border around the text area
+doc.text("Consignee at Destination: "+ consignee +"\t\t\t\t\t Car Owner: " + carOwner, 15, 50);
+doc.rect(10, 43, 190, 10);
+doc.rect(10, 53, 190, 10);
+doc.text("Destination: " + destination + "\t\t\t\t\t\t\t\tFreight Charges: " + freightCharges, 15, 60);
+
+doc.text("Jordan Insurance: " + jordanInsurance + "\t\t\t\t\t\t\tColour: " + colour, 15, 70);
+doc.rect(10, 63, 190, 10);
+doc.text("Model: " + model + "\t\t\t\t\t\t\t\t\tCar Number: " + carNumber  , 15, 80);
+doc.rect(10, 73, 190, 10);
+doc.text("Car Type: " + carType + "\t\t\t\t\t\t\tBooking Date: " + bookingDate ,15, 90);
+doc.rect(10, 83, 190, 10);
+doc.text("Receiving Date: " + receivingDate + "\t\t\t\t\t\tCar Value Declaration: " + carValueDeclaration,15, 100);
+doc.rect(10, 93, 190, 10);
+doc.text("Description:", 15, 110);
+doc.rect(10, 103, 190, 50);
+	var startY = 190;
+	if (description1 !== '') {
+		doc.text("- " + description1, 40, 120);
+	}
+	if (description2 !== '') {
+		doc.text("- " + description2, 80, 120);
+	}
+	if (description3 !== '') {
+		doc.text("- " + description3, 80, 130);
+	}
+	if (description4 !== '') {
+		doc.text("- " + description4, 140, 130);
+	}
+
+	if (description5 !== '') {
+		doc.text("- " + description5, 40, 140);
+	}
+	
+	if (description6 !== '') {
+		doc.text("- " + description6, 40, 130);
+	}
+	
+	if (description7 !== '') {
+		doc.text("- " + description7, 120, 120);
+
+	}
+	
+	if (description8 !== '') {
+		doc.text("- " + description8, 160, 120);
+
+	}
+	if (description9 !== '') {
+		doc.text("- " + description9, 160, 150);
+
+	}
+	if (description10 !== '') {
+		console.log(description10);
+		doc.text("- " + description10, 80, 140);
+	}
+	if (description11 !== '') {
+		doc.text("- " + description11, 120, 140);
+	}
+	if (description12 !== '') {
+		doc.text("- " + description12, 160, 140);
+
+	}
+	if (description13 !== '') {
+		doc.text("- " + description13, 40, 150);
+
+	}
+	
+	if (description14 !== '') {
+		doc.text("- " + description14, 80, 150);
+
+	}
+	
+	if (description15 !== '') {
+		doc.text("- " + description15, 120, 150);
+
+	}
+	doc.setFontSize(12);
+	doc.text("Rules and Regulations:", 15, 160);
+	doc.setFontSize(6);
+	doc.rect(10, 103, 190, 120);
+	doc.text("1. This fee is not considered a technical report of the condition of the vehicle.The company is not responsible for personal items inside the vehicle.",15,165);
+	doc.text("2. The company is not responsible for personal items inside the vehicle. The owner of the car must review the Jordanian customs section of foreign cars to renew the residence permit",15,168);
+	doc.text("   for the car according to the laws within 7 days of entering the territory of the Kingdom Upon signing this contract or paying the bill related to this contract,the owner of the car",15,171);
+	doc.text("   has authorized Concorde Logistics and its employees to drive the said car from Dubai to Abu Dhabi or vice versa, and the company will be responsible for traffic violations while driving only.",15,174);
+	doc.text("3. An amount of 20 dinars is paid when receiving and delivering the car in Jordan as an office service, in addition to 20 dinars when the car is delivered to return, and an amount of 25 dinars ",15,177);
+	doc.text("   for the car’s exit according to the Jordanian government.",15,180);
+	doc.text("4. The owner of the car must bring a clearance stamp from the foreign cars department before handing over the car to the company’s offices on the return trip,",15,183);
+	doc.text("    and the owner of the vehicle undertakes to pay all customs fines, violations, or insurances due to non-compliance with this condition.",15,186);
+	doc.text("5. The freight price agreed upon between the two parties is on the company's carriers only, and any laws issued in shipping vehicles on non-Emirati carriers. ",15,189);
+	doc.text("   The vehicle owner undertakes to pay the freight price difference in favor of the carrier company insurance and traffic fees for the vehicle before handing it over to the carrier company.",15,192);
+	doc.text("6. In the event of termination of the contract by one of the parties, the carrier company undertakes to return the amount of 500 dirhams (five hundred dirhams)",15,195);
+	doc.text("   only, and the owner of the vehicle is not entitled to claim more than this amount under any circumstances.",15,198);
+	doc.text("7. Any laws issued by governments or the Jordanian Transport Companies Association that prevent Emirati carriers from loading on the return trip. The vehicle is shipped ",15,201);
+	doc.text("   with any other Jordanian carrier and the vehicle owner bears an additional 300 Jordanian dinars to return the vehicle to the state As a price difference on Jordanian carriers.",15,204);
+	doc.text("8. The carrier company is not responsible for the personal effects inside the car. It is absolutely forbidden to place any electronics, electrical devices, medicines, magazines, newspapers, glasses, ",15,207);
+	doc.text("   perfumes or cigarettes, as they are completely prohibited. Follow the laws and provisions of the contract. It is forbidden to put any personal items inside the car.",15,210);
+	doc.text("9. The company is not responsible for the technical or mechanical condition of the car, and the company does not bear any responsibility towards the owner of the car, ",15,213);
+	doc.text("   as the car was received according to the external view only, without entering into mechanical or technical details about the condition of the vehicle.",15,216);
+	doc.text("10. A lawsuit may not be filed against the driver, employees or the company before a court arbitrator is appointed and the fees are paid by the car owner.",15,219);
+	doc.setFontSize(12);
+	doc.text("Documents:", 15, 228);
+	doc.rect(10, 103, 190, 140);
+	if (Vehicleownership !== '') {
+		doc.text("> " + Vehicleownership, 37, 232);
+	}
+	if (YourTripbook !== '') {
+		doc.text("> " + YourTripbook, 80, 232);
+	}
+	if (Expatriationcertificate !== '') {
+		doc.text("> " + Expatriationcertificate, 120, 232);
+	}
+	if (Drivinglicense !== '') {
+		doc.text("> " + Drivinglicense, 60, 240);
+	}
+	if (Residencepermit !== '') {
+		doc.text("> " + Residencepermit, 100, 240);
+	}
+doc.setFontSize(12);
+	doc.text("Comments: ", 15, 250);
+	doc.setFontSize(7);
+	doc.text("\n\n"+comments,15,250);
+	doc.rect(10, 103, 190, 160);
+	doc.text(agreement,15,268);
+doc.setFontSize(13);
+doc.text("CONCORDE LOGISTICS SERVICES " , 20, 280);
+doc.setFontSize(10);
+doc.text("Date : " + date1 +"\t"+ "Signature : " + signature1, 16,287  )
+doc.rect(15, 271, 95, 20);
+doc.rect(10, 113, 190, 180);
+doc.setFontSize(13);
+doc.text("CUSTOMER ", 115, 280);
+doc.setFontSize(10);
+doc.text("Date: "+ date2 +"\t"+ "Signature : " + signature2, 111,287 )
+doc.rect(15, 271, 180, 20);
+
+let pdfname = carOwner+"("+carNumber+")";
+
+	doc.save(pdfname+".pdf");
+
+		}	
+	</script>
+</body>
+</html>
